@@ -1,0 +1,15 @@
+<h3>Chatting with <%= @conversation.with(current_user).name %></h3>
+
+<div id="conversation-main">
+  <ul id="conversation-body" class="list-group">
+    <%= render @conversation.personal_messages %>
+  </ul>
+
+  <%= form_for @personal_message do |f| %>
+    <%= hidden_field_tag 'conversation_id', @conversation.id %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

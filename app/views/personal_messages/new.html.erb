@@ -1,0 +1,9 @@
+<h3>New message to <%= @receiver.name %></h3>
+
+<%= form_for @personal_message do |f| %>
+  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+
+  <%= f.text_area :body %>
+
+  <%= f.submit :Send, class: "btn btn-success"%>
+<% end %>

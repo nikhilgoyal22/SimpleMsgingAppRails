@@ -1,0 +1,4 @@
+<li class="list-group-item">
+  <% value = (user.role == 'Trainer') ? "#{user.name} (#{user.role})" : user.name%>
+  <%= value %> | <%= link_to 'send a message', new_personal_message_path(receiver_id: user) %>
+</li>
